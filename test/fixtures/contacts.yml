@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  mobile: 1
+  voip: 1
+
+two:
+  name: MyString
+  mobile: 1
+  voip: 1

@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+1000.times do
+  Contact.create :name => "#{Faker::Name.first_name} #{Faker::Name.last_name}", :mobile => "#{Faker::PhoneNumber.phone_number}", :voip => "#{Faker::PhoneNumber.phone_number}"
+end

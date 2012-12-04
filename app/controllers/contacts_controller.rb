@@ -1,8 +1,12 @@
 class ContactsController < ApplicationController
   # GET /contacts
   # GET /contacts.json
+  def autocomplete
+    render :json => Contact.search(params['term'])
+  end
+
   def index
-    @contacts = Contact.all
+    @contacts = Contact.last(30)
 
     respond_to do |format|
       format.html # index.html.erb

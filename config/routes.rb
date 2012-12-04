@@ -1,4 +1,7 @@
 Contacts::Application.routes.draw do
+  
+  get "contacts/autocomplete"
+
   resources :contacts
 
 

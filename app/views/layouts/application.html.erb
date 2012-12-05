@@ -64,28 +64,16 @@
 
     <div class="container" style="margin-top:80px;">
    		<div class="ui-widget field">
-   	 		<label for="tags">Name: </label>
-    		<input id="tags" />
+    		<input type="text" id="tags" class="search-query" placeholder="Search" />
 		</div>
         <div class="row">
           <div class="span9">
              <%= yield %>
           </div>
-          <div class="span3">
-            <div class="well sidebar-nav">
-              <h3>Sidebar</h3>
-              <ul class="nav nav-list">
-                <li class="nav-header">Sidebar</li>
-                <li><%= link_to "Link1", "/path1"  %></li>
-                <li><%= link_to "Link2", "/path2"  %></li>
-                <li><%= link_to "Link3", "/path3"  %></li>
-              </ul>
-            </div><!--/.well -->
-          </div><!--/span-->
         </div><!--/row-->
 
       <footer>
-        <p>&copy; Company 2012</p>
+        <p></p>
       </footer>
 
     </div> <!-- /container -->
@@ -99,30 +87,6 @@
     
     <script>
     $(function() {
-        var availableTags = [
-            "ActionScript",
-            "AppleScript",
-            "Asp",
-            "BASIC",
-            "C",
-            "C++",
-            "Clojure",
-            "COBOL",
-            "ColdFusion",
-            "Erlang",
-            "Fortran",
-            "Groovy",
-            "Haskell",
-            "Java",
-            "JavaScript",
-            "Lisp",
-            "Perl",
-            "PHP",
-            "Python",
-            "Ruby",
-            "Scala",
-            "Scheme"
-        ];
         $( "#tags" ).autocomplete({
             source: "<%= contacts_autocomplete_path %>"
         });

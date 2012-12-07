@@ -2,7 +2,15 @@ class ContactsController < ApplicationController
   # GET /contacts
   # GET /contacts.json
   def autocomplete
-    render :json => Contact.search(params['term'])
+    render :json => Contact.autocomplete_search(params['term'])
+  end
+
+  def main
+
+  end
+
+  def search
+    @contacts = Contact.regular_search(params['term']) if params['term']
   end
 
   def index

@@ -21,7 +21,7 @@ Soulmate::Loader.class_eval do
         # store the raw data in a separate key to reduce memory usage
 
         #keeps hebrew in bytes! decodes back from utf-8
-        Soulmate.redis.hset(database, item["id"], MultiJson.encode(item).gsub!(/\\u([0-9a-z]{4})/) {|s| [$1.to_i(16)].pack("U")})
+        Soulmate.redis.hset(database, item["id"], MultiJson.encode(item).gsub(/\\u([0-9a-z]{4})/) {|s| [$1.to_i(16)].pack("U")})
         phrase = ([item["term"]] + (item["aliases"] || [])).join(' ')
         prefixes_for_phrase(phrase).each do |p|
           Soulmate.redis.sadd(base, p) # remember this prefix in a master set

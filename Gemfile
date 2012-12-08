@@ -18,6 +18,7 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
   gem "less-rails"
+  gem 'sass-rails'
   gem 'twitter-bootstrap-rails'
 end
 
@@ -25,6 +26,8 @@ gem 'jquery-rails'
 
 gem 'soulmate'
 gem 'faker'
+
+gem 'activeadmin'
 
 
 # To use ActiveModel has_secure_password

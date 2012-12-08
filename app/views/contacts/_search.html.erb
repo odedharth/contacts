@@ -1,5 +1,5 @@
 <div class="ui-widget field span12 pagination-centered">
    <%= form_tag "/contacts/search", :method => "get" %>
-   <%= search_field_tag "term", nil, :id => "tags", :class => "search-query" %>
+   <%= search_field_tag "term", nil, :id => "tags", :class => "search-query", :autocomplete => "off" %>
    <%= submit_tag "Search", :class => "btn", :style => "margin-left:5px;" %>
 </div>

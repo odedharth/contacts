@@ -1,6 +1,13 @@
 class ContactsController < ApplicationController
   # GET /contacts
   # GET /contacts.json
+
+  #before_filter :verify_if_admin, :except => [:search, :autocomplete]
+  
+  def verify_if_admin
+    redirect_to(root_path) if current_admin_user
+  end
+
   def autocomplete
     render :json => Contact.autocomplete_search(params['term'])
   end

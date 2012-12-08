@@ -2,6 +2,15 @@ class Contact < ActiveRecord::Base
 
   after_save :load_into_soulmate
 
+  validates_presence_of :name
+  validate :at_least_one_number
+
+  def at_least_one_number
+    if !mobile and !voip
+      errors[:base] << "Please enter at least one contact nubmer"
+    end
+  end
+
   def load_into_soulmate
     loader = Soulmate::Loader.new("contact")
     loader.add("term" => name, "id" => id)
